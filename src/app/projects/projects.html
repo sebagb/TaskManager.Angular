@@ -1,7 +1,6 @@
 <section>
     @for(project of projectsList; track project) {
-    <p>{{project.id}}</p>
-    <p>{{project.status}}</p>
+    <app-project-preview [projectPreview]="project" />
     } @empty {
     <p>There are no projects.</p>
     }
