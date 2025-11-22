@@ -1,8 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Projects } from './projects/projects'
+
 @Component({
   selector: 'app-root',
-  imports: [Projects],
+  imports: [RouterLink, Projects],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

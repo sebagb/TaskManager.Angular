@@ -1,0 +1,14 @@
+.project-preview {
+    background: var(--accent-color);
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+
+.project-preview-heading {
+    color: var(--primary-color);
+    padding: 10px 20px 0 20px;
+}
+
+.project-preview p {
+    padding: 10px 20px 0px 20px;
+}
