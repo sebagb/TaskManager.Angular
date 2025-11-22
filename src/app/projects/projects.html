@@ -1,5 +1,13 @@
+<section>
+    <form>
+        <input type="text" placeholder="Filter by title" #filter />
+        <button class="primary" type="button" (click)="filterResults(filter.value)">
+            Search
+        </button>
+    </form>
+</section>
 <section class="results">
-    @for(project of projectsList; track project) {
+    @for(project of filteredProjectsList; track $index) {
     <app-project-preview [projectPreview]="project" />
     } @empty {
     <p>There are no projects.</p>
