@@ -9,21 +9,21 @@ export class ProjectService {
 
   constructor() {
     this.projects = [{
-      id: 111111,
+      id: '111111',
       deadline: 1201,
       status: 'Pending',
       tasks: '',
       title: 'Love',
     },
     {
-      id: 222222,
+      id: '222222',
       deadline: 1201,
       status: 'Complete',
       tasks: '',
       title: 'Job',
     },
     {
-      id: 333333,
+      id: '333333',
       deadline: 1201,
       status: 'Halt',
       tasks: '',
@@ -35,7 +35,7 @@ export class ProjectService {
     return this.projects;
   }
 
-  getProjectById(id: number) {
-    return this.projects.find(x => x.id == id);
+  getProjectById(id: string) {
+    return this.projects.find(x => x.id === id);
   }
 }

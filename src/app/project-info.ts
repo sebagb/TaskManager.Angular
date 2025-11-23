@@ -1,5 +1,5 @@
 export interface ProjectInfo {
-    id: number;
+    id: string;
     deadline: number;
     status: string;
     tasks: string;

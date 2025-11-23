@@ -16,7 +16,7 @@ export class ProjectDetail {
   private readonly service = inject(ProjectService);
 
   constructor() {
-    let projectId = parseInt(this.route.snapshot.params['id']);
+    let projectId = this.route.snapshot.params['id'];
     this.project = this.service.getProjectById(projectId);
   }
 }
