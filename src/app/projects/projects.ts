@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProjectInfo } from '../project-info';
 import { ProjectPreview } from '../project-preview/project-preview';
+import { ProjectService } from '../project-service';
 
 @Component({
   selector: 'app-projects',
@@ -9,32 +10,12 @@ import { ProjectPreview } from '../project-preview/project-preview';
   styleUrl: './projects.css',
 })
 export class Projects {
-  projectsList: ProjectInfo[] = [];
-  filteredProjectsList: ProjectInfo[] = [];
+  projectService = inject(ProjectService);
+  readonly projectsList: ProjectInfo[];
+  filteredProjectsList: ProjectInfo[];
 
   constructor() {
-    this.projectsList = [{
-      id: 111111,
-      deadline: 1201,
-      status: 'Pending',
-      tasks: '',
-      title: 'Love',
-    },
-    {
-      id: 222222,
-      deadline: 1201,
-      status: 'Complete',
-      tasks: '',
-      title: 'Job',
-    },
-    {
-      id: 333333,
-      deadline: 1201,
-      status: 'Halt',
-      tasks: '',
-      title: 'Housing',
-    }];
-
+    this.projectsList = this.projectService.getAllProject();
     this.filteredProjectsList = this.projectsList;
   }
 
