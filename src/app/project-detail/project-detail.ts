@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-detail',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './project-detail.css',
 })
 export class ProjectDetail {
+  private route = inject(ActivatedRoute);
+  readonly projectId: number;
 
+  constructor() {
+    this.projectId = parseInt(this.route.snapshot.params['id']);
+  }
 }

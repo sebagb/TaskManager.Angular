@@ -10,4 +10,7 @@
         Deadline:
         {{ projectPreview().deadline }}
     </p>
+    <a [routerLink]="['/details', projectPreview().id]">
+        View Details
+    </a>
 </section>

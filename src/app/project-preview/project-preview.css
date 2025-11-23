@@ -12,3 +12,13 @@
 .project-preview p {
     padding: 10px 20px 0px 20px;
 }
+
+.project-preview a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.project-preview a::after {
+    content: "\203A";
+}

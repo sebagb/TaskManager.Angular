@@ -1,3 +1,16 @@
 import { Routes } from '@angular/router';
+import { Projects } from './projects/projects';
+import { ProjectDetail } from './project-detail/project-detail';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path: '',
+        component: Projects,
+        title: 'Projects List',
+    },
+    {
+        path: 'details/:id',
+        component: ProjectDetail,
+        title: 'Project Detail',
+    },
+];
