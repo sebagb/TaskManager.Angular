@@ -12,21 +12,24 @@ export class ProjectService {
       id: '111111',
       deadline: 1201,
       status: 'Pending',
-      tasks: '',
+      tasks: [
+        { id: '1a1a', projectId: '111111', title: 'Be', priority: 1 },
+        { id: '1b1b', projectId: '111111', title: 'Present', priority: 2 },
+        { id: '1c1c', projectId: '111111', title: 'Now', priority: 3 },],
       title: 'Love',
     },
     {
       id: '222222',
       deadline: 1201,
       status: 'Complete',
-      tasks: '',
+      tasks: [{ id: '2a2a', projectId: '222222', title: 'Work', priority: 2 }],
       title: 'Job',
     },
     {
       id: '333333',
       deadline: 1201,
       status: 'Halt',
-      tasks: '',
+      tasks: [{ id: '3a3a', projectId: '333333', title: 'Clean', priority: 1 }],
       title: 'Housing',
     }];
   }
