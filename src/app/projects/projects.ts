@@ -10,8 +10,8 @@ import { ProjectService } from '../project-service';
   styleUrl: './projects.css',
 })
 export class Projects {
-  projectService = inject(ProjectService);
-  readonly projectsList: ProjectInfo[];
+  private readonly projectService = inject(ProjectService);
+  private readonly projectsList: ProjectInfo[];
   filteredProjectsList: ProjectInfo[];
 
   constructor() {
