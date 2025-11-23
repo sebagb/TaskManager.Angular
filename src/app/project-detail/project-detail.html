@@ -1,1 +1,12 @@
-<p>project-detail id {{projectId}}!</p>
+<article>
+    <h1>{{ project?.title }}</h1>
+    <section>
+        <p>
+            Deadline: {{ project?.deadline }}
+            Status: {{ project?.status }}
+        </p>
+    </section>
+    <section>
+        <p>Tasks {{ project?.tasks }} </p>
+    </section>
+</article>

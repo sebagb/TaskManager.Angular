@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectService } from '../project-service';
+import { ProjectInfo } from '../project-info';
 
 @Component({
   selector: 'app-project-detail',
@@ -8,10 +10,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './project-detail.css',
 })
 export class ProjectDetail {
-  private route = inject(ActivatedRoute);
-  readonly projectId: number;
+  public readonly project: ProjectInfo | undefined;
+
+  private readonly route = inject(ActivatedRoute);
+  private readonly service = inject(ProjectService);
 
   constructor() {
-    this.projectId = parseInt(this.route.snapshot.params['id']);
+    let projectId = parseInt(this.route.snapshot.params['id']);
+    this.project = this.service.getProjectById(projectId);
   }
 }

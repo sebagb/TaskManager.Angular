@@ -15,7 +15,7 @@ export class Projects {
   filteredProjectsList: ProjectInfo[];
 
   constructor() {
-    this.projectsList = this.projectService.getAllProject();
+    this.projectsList = this.projectService.getAllProjects();
     this.filteredProjectsList = this.projectsList;
   }
 

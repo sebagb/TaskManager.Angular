@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { ProjectInfo } from './project-info';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectService {
-  getAllProject() {
-    return [{
+  public readonly projects: ProjectInfo[];
+
+  constructor() {
+    this.projects = [{
       id: 111111,
       deadline: 1201,
       status: 'Pending',
@@ -26,5 +29,13 @@ export class ProjectService {
       tasks: '',
       title: 'Housing',
     }];
+  }
+
+  getAllProjects() {
+    return this.projects;
+  }
+
+  getProjectById(id: number) {
+    return this.projects.find(x => x.id == id);
   }
 }
