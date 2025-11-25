@@ -10,13 +10,17 @@ import { ProjectInfo } from '../project-info';
   styleUrl: './project-detail.css',
 })
 export class ProjectDetail {
-  public readonly project: ProjectInfo | undefined;
+  public project: ProjectInfo | undefined;
 
   private readonly route = inject(ActivatedRoute);
   private readonly service = inject(ProjectService);
 
   constructor() {
-    let projectId = this.route.snapshot.params['id'];
-    this.project = this.service.getProjectById(projectId);
+    const projectId = this.route.snapshot.params['id'];
+    this.service
+      .getProjectById(projectId)
+      .then((project: ProjectInfo | undefined) => {
+        this.project = project;
+      });
   }
 }

@@ -11,12 +11,19 @@ import { ProjectService } from '../project-service';
 })
 export class Projects {
   private readonly projectService = inject(ProjectService);
-  private readonly projectsList: ProjectInfo[];
-  filteredProjectsList: ProjectInfo[];
+  private projectsList: ProjectInfo[];
+  public filteredProjectsList: ProjectInfo[];
 
   constructor() {
-    this.projectsList = this.projectService.getAllProjects();
-    this.filteredProjectsList = this.projectsList;
+    this.projectsList = [];
+    this.filteredProjectsList = [];
+
+    this.projectService
+      .getAllProjects()
+      .then((list: ProjectInfo[]) => {
+        this.projectsList = list;
+        this.filteredProjectsList = list;
+      })
   }
 
   filterResults(text: string) {
