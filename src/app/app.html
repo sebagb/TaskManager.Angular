@@ -1,9 +1,12 @@
 <main>
-    <a [routerLink]="['/']">
-        <header>
-            <h1>Projects</h1>
-        </header>
-    </a>
+    <header>
+        <div>
+            <a routerLink="/">
+                <h1>Projects</h1>
+            </a>
+            <button class="primary" routerLink="user/access">Access</button>
+        </div>
+    </header>
     <section class="content">
         <router-outlet />
     </section>
