@@ -1,1 +1,15 @@
-<p>user-access works!</p>
+<section>
+    <form>
+        <label>Username:</label>
+        <input type="text" #username />
+        <label>Password:</label>
+        <input type="text" #password />
+        <button type="button" (click)="register(username.value, password.value)">
+            Register
+        </button>
+        <button type="button" (click)="login(username.value, password.value)">
+            Login
+        </button>
+    </form>
+    <p>{{ message }}</p>
+</section>
